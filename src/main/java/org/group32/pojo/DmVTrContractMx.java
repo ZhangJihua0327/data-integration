@@ -34,7 +34,6 @@ public class DmVTrContractMx extends POJO{
     private String putoutDate;
     private String matuDate;
     private String vouchType;
-    private String isOthVouch;
     private String applyType;
     private long extendTimes;
     private double actuOutAmt;

@@ -11,7 +11,7 @@ public class SqlStatement implements Serializable {
             "                                 buss_type, occur_type, is_credit_cyc, curr_type, buss_amt, loan_pert, term_year,\n" +
             "                                 term_mth, term_day, base_rate_type, base_rate, float_type, rate_float, rate, pay_times,\n" +
             "                                 pay_type, direction, loan_use, pay_source, putout_date, matu_date, vouch_type,\n" +
-            "                                 is_oth_vouch, apply_type, extend_times, actu_out_amt, bal, norm_bal, dlay_bal,\n" +
+            "                                 apply_type, extend_times, actu_out_amt, bal, norm_bal, dlay_bal,\n" +
             "                                 dull_bal, owed_int_in, owed_int_out, fine_pr_int, fine_intr_int, dlay_days, five_class,\n" +
             "                                 class_date, mge_org, mgr_no, operate_org, operator, operate_date, reg_org, register,\n" +
             "                                 reg_date, inte_settle_type, is_bad, frz_amt, con_crl_type, shift_type, due_intr_days,\n" +

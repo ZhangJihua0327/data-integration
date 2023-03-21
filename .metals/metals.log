@@ -11027,3 +11027,1186 @@ import org.group32.utils.ClickhouseSinkFunction;
                                     ^
 Mar 21, 2023 5:29:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2023.03.21 18:28:44 INFO  Shutting down server
+2023.03.21 18:28:44 INFO  shutting down Metals
+2023.03.21 18:28:44 INFO  Exiting server
+2023.03.21 20:45:13 INFO  Started: Metals version 0.11.11 in workspace '/home/ubuntu/kafka-sink-clickhouse' for client Visual Studio Code 1.76.2.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/home/ubuntu/.cache/coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.21 20:45:15 INFO  time: initialize in 1.87s
+2023.03.21 20:45:17 WARN  Build server is not auto-connectable.
+2023.03.21 20:45:17 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java
+2023.03.21 20:45:17 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/EasyConsumer.java
+2023.03.21 20:45:18 INFO  skipping build import with status 'Failed'
+2023.03.21 20:45:20 INFO  time: code lens generation in 1.85s
+2023.03.21 20:45:22 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:3: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSON;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:4: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSONObject;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:5: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.FilterFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:6: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.MapFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:7: error: package org.apache.flink.api.common.serialization does not exist
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:8: error: package org.apache.flink.streaming.api does not exist
+import org.apache.flink.streaming.api.TimeCharacteristic;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:9: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStream;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:10: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:11: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:12: error: package org.apache.flink.streaming.api.environment does not exist
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+                                                 ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:13: error: package org.apache.flink.streaming.connectors.kafka does not exist
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+                                                  ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:14: error: package org.apache.kafka.clients.consumer does not exist
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+                                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:15: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:16: error: package org.group32.utils does not exist
+import org.group32.utils.ClickhouseSinkFunction;
+                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                       ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                                                            ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                       ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                             ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                                                                        ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                   ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                                                                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:25: error: cannot find symbol
+        pojoMap.put("contract", DmVTrContractMx.class);
+                                ^
+  symbol:   class DmVTrContractMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:26: error: cannot find symbol
+        pojoMap.put("djk", DmVTrDjkMx.class);
+                           ^
+  symbol:   class DmVTrDjkMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:27: error: cannot find symbol
+        pojoMap.put("dsf", DmVTrDsfMx.class);
+                           ^
+  symbol:   class DmVTrDsfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:28: error: cannot find symbol
+        pojoMap.put("duebill", DmVTrDuebillMx.class);
+                               ^
+  symbol:   class DmVTrDuebillMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:29: error: cannot find symbol
+        pojoMap.put("etc", DmVTrEtcMx.class);
+                           ^
+  symbol:   class DmVTrEtcMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:30: error: cannot find symbol
+        pojoMap.put("grwy", DmVTrGrwyMx.class);
+                            ^
+  symbol:   class DmVTrGrwyMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:31: error: cannot find symbol
+        pojoMap.put("gzdf", DmVTrGzdfMx.class);
+                            ^
+  symbol:   class DmVTrGzdfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:32: error: cannot find symbol
+        pojoMap.put("huanb", DmVTrHuanbMx.class);
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:33: error: cannot find symbol
+        pojoMap.put("huanx", DmVTrHuanxMx.class);
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:34: error: cannot find symbol
+        pojoMap.put("sa", DmVTrSaMx.class);
+                          ^
+  symbol:   class DmVTrSaMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:35: error: cannot find symbol
+        pojoMap.put("sbyb", DmVTrSbybMx.class);
+                            ^
+  symbol:   class DmVTrSbybMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:36: error: cannot find symbol
+        pojoMap.put("sdrq", DmVTrSdrqMx.class);
+                            ^
+  symbol:   class DmVTrSdrqMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:37: error: cannot find symbol
+        pojoMap.put("sjyh", DmVTrSjyhMx.class);
+                            ^
+  symbol:   class DmVTrSjyhMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:38: error: cannot find symbol
+        pojoMap.put("shop", VTrShopMx.class);
+                            ^
+  symbol:   class VTrShopMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        ^
+  symbol:   class StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+                                         ^
+  symbol:   variable StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:46: error: cannot find symbol
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+                                        ^
+  symbol:   variable TimeCharacteristic
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:49: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:50: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:51: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:52: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "t21312333");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:53: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                  ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                                                        ^
+  symbol:   class SimpleStringSchema
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:59: error: cannot find symbol
+        DataStreamSource<String> source = env.addSource(consumer);
+        ^
+  symbol:   class DataStreamSource
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:60: error: cannot find symbol
+        List<DataStream<String>> dataStreams = spiltByEventType(source);
+             ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:62: error: cannot find symbol
+            Class<? extends POJO> tclass = pojoMap.get(eventTypes.get(i));
+                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+            ^
+  symbol:   class ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+                                          ^
+  symbol:   variable ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+            ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+                                                 ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:72: error: cannot find symbol
+        return eventTypes.stream().map(eventType -> dataSource.filter((FilterFunction<String>) s -> {
+                                                                       ^
+  symbol:   class FilterFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: cannot find symbol
+        MapFunction<String, T> mp = s -> {
+        ^
+  symbol:   class MapFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
+        MapFunction<String, T> mp = s -> {
+                                    ^
+Mar 21, 2023 8:45:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 9
+2023.03.21 20:46:56 INFO  Shutting down server
+2023.03.21 20:46:56 INFO  shutting down Metals
+2023.03.21 20:46:56 INFO  Exiting server
+2023.03.21 21:06:42 INFO  Started: Metals version 0.11.11 in workspace '/home/ubuntu/kafka-sink-clickhouse' for client Visual Studio Code 1.76.2.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/home/ubuntu/.cache/coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.21 21:06:43 INFO  time: initialize in 1.2s
+2023.03.21 21:06:44 WARN  Build server is not auto-connectable.
+2023.03.21 21:06:44 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/EasyConsumer.java
+2023.03.21 21:06:45 INFO  skipping build import with status 'Failed'
+2023.03.21 21:06:47 INFO  time: code lens generation in 1.68s
+2023.03.21 21:07:12 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java
+2023.03.21 21:07:14 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:3: error: package org.apache.flink.configuration does not exist
+import org.apache.flink.configuration.Configuration;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:4: error: package org.apache.flink.streaming.api.functions.sink does not exist
+import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
+                                                    ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:5: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:6: error: package ru.yandex.clickhouse does not exist
+import ru.yandex.clickhouse.ClickHouseConnection;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:7: error: package ru.yandex.clickhouse does not exist
+import ru.yandex.clickhouse.ClickHouseConnectionImpl;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:8: error: package ru.yandex.clickhouse.settings does not exist
+import ru.yandex.clickhouse.settings.ClickHouseProperties;
+                                    ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:13: error: cannot find symbol
+public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> {
+                                                            ^
+  symbol: class RichSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:13: error: cannot find symbol
+public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> {
+                                              ^
+  symbol: class POJO
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:14: error: cannot find symbol
+    private ClickHouseConnection conn = null;
+            ^
+  symbol:   class ClickHouseConnection
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:20: error: cannot find symbol
+    public void open(Configuration parameters) throws Exception {
+                     ^
+  symbol:   class Configuration
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:39: error: cannot find symbol
+    public void invoke(T value, Context context) throws Exception {
+                                ^
+  symbol:   class Context
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:61: error: cannot find symbol
+    public static ClickhouseSinkFunction makeUtil( Class<? extends POJO> tclass) {
+                                                                   ^
+  symbol:   class POJO
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:19: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:21: error: cannot find symbol
+        super.open(parameters);
+        ^
+  symbol:   variable super
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:23: error: cannot find symbol
+        ClickHouseProperties properties = new ClickHouseProperties();
+        ^
+  symbol:   class ClickHouseProperties
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:23: error: cannot find symbol
+        ClickHouseProperties properties = new ClickHouseProperties();
+                                              ^
+  symbol:   class ClickHouseProperties
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:28: error: cannot find symbol
+        conn = new ClickHouseConnectionImpl(url, properties);
+                   ^
+  symbol:   class ClickHouseConnectionImpl
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:32: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:34: error: cannot find symbol
+        super.close();
+        ^
+  symbol:   variable super
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:38: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:40: error: cannot find symbol
+        super.invoke(value, context);
+        ^
+  symbol:   variable super
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:41: error: cannot find symbol
+        PreparedStatement stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
+                                                       ^
+  symbol:   variable SqlStatement
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:62: error: cannot find symbol
+        if (tclass == DmVTrContractMx.class) {
+                      ^
+  symbol:   class DmVTrContractMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:63: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrContractMx>();
+                                              ^
+  symbol:   class DmVTrContractMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:64: error: cannot find symbol
+        } else if (tclass == DmVTrDjkMx.class) {
+                             ^
+  symbol:   class DmVTrDjkMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:65: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrDjkMx>();
+                                              ^
+  symbol:   class DmVTrDjkMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:66: error: cannot find symbol
+        } else if (tclass == DmVTrDsfMx.class) {
+                             ^
+  symbol:   class DmVTrDsfMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:67: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrDsfMx>();
+                                              ^
+  symbol:   class DmVTrDsfMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:68: error: cannot find symbol
+        } else if (tclass == DmVTrDuebillMx.class) {
+                             ^
+  symbol:   class DmVTrDuebillMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:69: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrDuebillMx>();
+                                              ^
+  symbol:   class DmVTrDuebillMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:70: error: cannot find symbol
+        } else if (tclass == DmVTrEtcMx.class) {
+                             ^
+  symbol:   class DmVTrEtcMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:71: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrEtcMx>();
+                                              ^
+  symbol:   class DmVTrEtcMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:72: error: cannot find symbol
+        } else if (tclass == DmVTrGrwyMx.class) {
+                             ^
+  symbol:   class DmVTrGrwyMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:73: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrGrwyMx>();
+                                              ^
+  symbol:   class DmVTrGrwyMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:74: error: cannot find symbol
+        } else if (tclass == DmVTrGzdfMx.class) {
+                             ^
+  symbol:   class DmVTrGzdfMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:75: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrGzdfMx>();
+                                              ^
+  symbol:   class DmVTrGzdfMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:76: error: cannot find symbol
+        } else if (tclass == DmVTrHuanbMx.class) {
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:77: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrHuanbMx>();
+                                              ^
+  symbol:   class DmVTrHuanbMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:78: error: cannot find symbol
+        } else if (tclass == DmVTrHuanxMx.class) {
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:79: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrHuanxMx>();
+                                              ^
+  symbol:   class DmVTrHuanxMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:80: error: cannot find symbol
+        } else if (tclass == DmVTrSaMx.class) {
+                             ^
+  symbol:   class DmVTrSaMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:81: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrSaMx>();
+                                              ^
+  symbol:   class DmVTrSaMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:82: error: cannot find symbol
+        } else if (tclass == DmVTrSbybMx.class) {
+                             ^
+  symbol:   class DmVTrSbybMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:83: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrSbybMx>();
+                                              ^
+  symbol:   class DmVTrSbybMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:84: error: cannot find symbol
+        } else if (tclass == DmVTrSdrqMx.class) {
+                             ^
+  symbol:   class DmVTrSdrqMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:85: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrSdrqMx>();
+                                              ^
+  symbol:   class DmVTrSdrqMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:86: error: cannot find symbol
+        } else if (tclass == DmVTrSjyhMx.class) {
+                             ^
+  symbol:   class DmVTrSjyhMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:87: error: cannot find symbol
+            return new ClickhouseSinkFunction<DmVTrSjyhMx>();
+                                              ^
+  symbol:   class DmVTrSjyhMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:88: error: cannot find symbol
+        } else if (tclass == VTrShopMx.class) {
+                             ^
+  symbol:   class VTrShopMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:89: error: cannot find symbol
+            return new ClickhouseSinkFunction<VTrShopMx>();
+                                              ^
+  symbol:   class VTrShopMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:94: error: cannot find symbol
+        DmVTrHuanbMx huanbMx = new DmVTrHuanbMx();
+        ^
+  symbol:   class DmVTrHuanbMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:94: error: cannot find symbol
+        DmVTrHuanbMx huanbMx = new DmVTrHuanbMx();
+                                   ^
+  symbol:   class DmVTrHuanbMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:96: error: cannot find symbol
+        ClickhouseSinkFunction<DmVTrHuanbMx> util = makeUtil(huanbMx.getClass());
+                               ^
+  symbol:   class DmVTrHuanbMx
+  location: class ClickhouseSinkFunction<T>
+  where T is a type-variable:
+    T declared in class ClickhouseSinkFunction
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java:1: error: 
+package org.group32.utils;
+^
+Exception in thread "main" java.lang.RuntimeException: java.lang.RuntimeException: boom
+	at com.sun.tools.javac.main.Main.compile(Main.java:559)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Caused by: java.lang.RuntimeException: boom
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:76)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	... 5 more
+Caused by: com.sourcegraph.semanticdb_javac.CompilationUnitException: file:/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/ClickhouseSinkFunction.java
+Caused by: java.lang.NullPointerException
+	at com.sourcegraph.semanticdb_javac.Semanticdb$TypeSignature$Builder.setUpperBound(Semanticdb.java:9271)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:49)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateType(SemanticdbSignatures.java:110)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateFieldSignature(SemanticdbSignatures.java:82)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateSignature(SemanticdbSignatures.java:30)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.semanticdbSignature(SemanticdbVisitor.java:265)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolInformation(SemanticdbVisitor.java:96)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolOccurrence(SemanticdbVisitor.java:88)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:206)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:864)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitMethod(TreeScanner.java:141)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitMethod(SemanticdbVisitor.java:199)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitMethod(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:800)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:81)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:133)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:173)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:720)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:120)
+	at com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:550)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.buildTextDocument(SemanticdbVisitor.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.onFinishedAnalyze(SemanticdbTaskListener.java:85)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:64)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+2023.03.21 21:07:14 INFO  time: code lens generation in 1.25s
+2023.03.21 21:07:14 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+2023.03.21 21:07:16 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:3: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                       ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:71: error: cannot find symbol
+    public static String getSQl(Class<? extends POJO> tclass) {
+                                                ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                                                                           ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:55: error: cannot find symbol
+        sqlMap.put(DmVTrContractMx.class, ContractSql);
+                   ^
+  symbol:   class DmVTrContractMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:56: error: cannot find symbol
+        sqlMap.put(DmVTrDjkMx.class, DjkSql);
+                   ^
+  symbol:   class DmVTrDjkMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:57: error: cannot find symbol
+        sqlMap.put(DmVTrDsfMx.class, DsfSql);
+                   ^
+  symbol:   class DmVTrDsfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:58: error: cannot find symbol
+        sqlMap.put(DmVTrDuebillMx.class, DuebillSql);
+                   ^
+  symbol:   class DmVTrDuebillMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:59: error: cannot find symbol
+        sqlMap.put(DmVTrEtcMx.class, EtcSql);
+                   ^
+  symbol:   class DmVTrEtcMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:60: error: cannot find symbol
+        sqlMap.put(DmVTrGrwyMx.class, GrwySql);
+                   ^
+  symbol:   class DmVTrGrwyMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:61: error: cannot find symbol
+        sqlMap.put(DmVTrGzdfMx.class, GzdfSql);
+                   ^
+  symbol:   class DmVTrGzdfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:62: error: cannot find symbol
+        sqlMap.put(DmVTrHuanbMx.class, HuanbSql);
+                   ^
+  symbol:   class DmVTrHuanbMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:63: error: cannot find symbol
+        sqlMap.put(DmVTrHuanxMx.class, HuanxSql);
+                   ^
+  symbol:   class DmVTrHuanxMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:64: error: cannot find symbol
+        sqlMap.put(DmVTrSaMx.class, SaSql);
+                   ^
+  symbol:   class DmVTrSaMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:65: error: cannot find symbol
+        sqlMap.put(DmVTrSbybMx.class, SbybSql);
+                   ^
+  symbol:   class DmVTrSbybMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:66: error: cannot find symbol
+        sqlMap.put(DmVTrSdrqMx.class, SdrqSql);
+                   ^
+  symbol:   class DmVTrSdrqMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:67: error: cannot find symbol
+        sqlMap.put(DmVTrSjyhMx.class, SjyhSql);
+                   ^
+  symbol:   class DmVTrSjyhMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:68: error: cannot find symbol
+        sqlMap.put(VTrShopMx.class, ShopSql);
+                   ^
+  symbol:   class VTrShopMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:1: error: 
+package org.group32.utils;
+^
+Exception in thread "main" java.lang.RuntimeException: java.lang.RuntimeException: boom
+	at com.sun.tools.javac.main.Main.compile(Main.java:559)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Caused by: java.lang.RuntimeException: boom
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:76)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	... 5 more
+Caused by: com.sourcegraph.semanticdb_javac.CompilationUnitException: file:/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+Caused by: java.lang.NullPointerException
+	at com.sourcegraph.semanticdb_javac.Semanticdb$TypeSignature$Builder.setUpperBound(Semanticdb.java:9271)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:49)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:39)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateType(SemanticdbSignatures.java:110)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateFieldSignature(SemanticdbSignatures.java:82)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateSignature(SemanticdbSignatures.java:30)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.semanticdbSignature(SemanticdbVisitor.java:265)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolInformation(SemanticdbVisitor.java:96)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolOccurrence(SemanticdbVisitor.java:88)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:206)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:864)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:81)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:133)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:173)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:720)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:120)
+	at com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:550)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.buildTextDocument(SemanticdbVisitor.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.onFinishedAnalyze(SemanticdbTaskListener.java:85)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:64)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Mar 21, 2023 9:07:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25
+2023.03.21 21:07:31 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+2023.03.21 21:07:33 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:3: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                       ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:71: error: cannot find symbol
+    public static String getSQl(Class<? extends POJO> tclass) {
+                                                ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                                                                           ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:55: error: cannot find symbol
+        sqlMap.put(DmVTrContractMx.class, ContractSql);
+                   ^
+  symbol:   class DmVTrContractMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:56: error: cannot find symbol
+        sqlMap.put(DmVTrDjkMx.class, DjkSql);
+                   ^
+  symbol:   class DmVTrDjkMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:57: error: cannot find symbol
+        sqlMap.put(DmVTrDsfMx.class, DsfSql);
+                   ^
+  symbol:   class DmVTrDsfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:58: error: cannot find symbol
+        sqlMap.put(DmVTrDuebillMx.class, DuebillSql);
+                   ^
+  symbol:   class DmVTrDuebillMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:59: error: cannot find symbol
+        sqlMap.put(DmVTrEtcMx.class, EtcSql);
+                   ^
+  symbol:   class DmVTrEtcMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:60: error: cannot find symbol
+        sqlMap.put(DmVTrGrwyMx.class, GrwySql);
+                   ^
+  symbol:   class DmVTrGrwyMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:61: error: cannot find symbol
+        sqlMap.put(DmVTrGzdfMx.class, GzdfSql);
+                   ^
+  symbol:   class DmVTrGzdfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:62: error: cannot find symbol
+        sqlMap.put(DmVTrHuanbMx.class, HuanbSql);
+                   ^
+  symbol:   class DmVTrHuanbMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:63: error: cannot find symbol
+        sqlMap.put(DmVTrHuanxMx.class, HuanxSql);
+                   ^
+  symbol:   class DmVTrHuanxMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:64: error: cannot find symbol
+        sqlMap.put(DmVTrSaMx.class, SaSql);
+                   ^
+  symbol:   class DmVTrSaMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:65: error: cannot find symbol
+        sqlMap.put(DmVTrSbybMx.class, SbybSql);
+                   ^
+  symbol:   class DmVTrSbybMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:66: error: cannot find symbol
+        sqlMap.put(DmVTrSdrqMx.class, SdrqSql);
+                   ^
+  symbol:   class DmVTrSdrqMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:67: error: cannot find symbol
+        sqlMap.put(DmVTrSjyhMx.class, SjyhSql);
+                   ^
+  symbol:   class DmVTrSjyhMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:68: error: cannot find symbol
+        sqlMap.put(VTrShopMx.class, ShopSql);
+                   ^
+  symbol:   class VTrShopMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:1: error: 
+package org.group32.utils;
+^
+Exception in thread "main" java.lang.RuntimeException: java.lang.RuntimeException: boom
+	at com.sun.tools.javac.main.Main.compile(Main.java:559)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Caused by: java.lang.RuntimeException: boom
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:76)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	... 5 more
+Caused by: com.sourcegraph.semanticdb_javac.CompilationUnitException: file:/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+Caused by: java.lang.NullPointerException
+	at com.sourcegraph.semanticdb_javac.Semanticdb$TypeSignature$Builder.setUpperBound(Semanticdb.java:9271)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:49)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:39)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateType(SemanticdbSignatures.java:110)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateFieldSignature(SemanticdbSignatures.java:82)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateSignature(SemanticdbSignatures.java:30)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.semanticdbSignature(SemanticdbVisitor.java:265)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolInformation(SemanticdbVisitor.java:96)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolOccurrence(SemanticdbVisitor.java:88)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:206)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:864)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:81)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:133)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:173)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:720)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:120)
+	at com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:550)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.buildTextDocument(SemanticdbVisitor.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.onFinishedAnalyze(SemanticdbTaskListener.java:85)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:64)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+2023.03.21 21:07:35 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+2023.03.21 21:07:35 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:3: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                       ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:71: error: cannot find symbol
+    public static String getSQl(Class<? extends POJO> tclass) {
+                                                ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:52: error: cannot find symbol
+    private static Map<Class<? extends POJO>, String> sqlMap = new HashMap<Class<? extends POJO>, String>();
+                                                                                           ^
+  symbol:   class POJO
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:55: error: cannot find symbol
+        sqlMap.put(DmVTrContractMx.class, ContractSql);
+                   ^
+  symbol:   class DmVTrContractMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:56: error: cannot find symbol
+        sqlMap.put(DmVTrDjkMx.class, DjkSql);
+                   ^
+  symbol:   class DmVTrDjkMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:57: error: cannot find symbol
+        sqlMap.put(DmVTrDsfMx.class, DsfSql);
+                   ^
+  symbol:   class DmVTrDsfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:58: error: cannot find symbol
+        sqlMap.put(DmVTrDuebillMx.class, DuebillSql);
+                   ^
+  symbol:   class DmVTrDuebillMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:59: error: cannot find symbol
+        sqlMap.put(DmVTrEtcMx.class, EtcSql);
+                   ^
+  symbol:   class DmVTrEtcMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:60: error: cannot find symbol
+        sqlMap.put(DmVTrGrwyMx.class, GrwySql);
+                   ^
+  symbol:   class DmVTrGrwyMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:61: error: cannot find symbol
+        sqlMap.put(DmVTrGzdfMx.class, GzdfSql);
+                   ^
+  symbol:   class DmVTrGzdfMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:62: error: cannot find symbol
+        sqlMap.put(DmVTrHuanbMx.class, HuanbSql);
+                   ^
+  symbol:   class DmVTrHuanbMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:63: error: cannot find symbol
+        sqlMap.put(DmVTrHuanxMx.class, HuanxSql);
+                   ^
+  symbol:   class DmVTrHuanxMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:64: error: cannot find symbol
+        sqlMap.put(DmVTrSaMx.class, SaSql);
+                   ^
+  symbol:   class DmVTrSaMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:65: error: cannot find symbol
+        sqlMap.put(DmVTrSbybMx.class, SbybSql);
+                   ^
+  symbol:   class DmVTrSbybMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:66: error: cannot find symbol
+        sqlMap.put(DmVTrSdrqMx.class, SdrqSql);
+                   ^
+  symbol:   class DmVTrSdrqMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:67: error: cannot find symbol
+        sqlMap.put(DmVTrSjyhMx.class, SjyhSql);
+                   ^
+  symbol:   class DmVTrSjyhMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:68: error: cannot find symbol
+        sqlMap.put(VTrShopMx.class, ShopSql);
+                   ^
+  symbol:   class VTrShopMx
+  location: class SqlStatement
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java:1: error: 
+package org.group32.utils;
+^
+Exception in thread "main" java.lang.RuntimeException: java.lang.RuntimeException: boom
+	at com.sun.tools.javac.main.Main.compile(Main.java:559)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Caused by: java.lang.RuntimeException: boom
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:76)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	... 5 more
+Caused by: com.sourcegraph.semanticdb_javac.CompilationUnitException: file:/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+Caused by: java.lang.NullPointerException
+	at com.sourcegraph.semanticdb_javac.Semanticdb$TypeSignature$Builder.setUpperBound(Semanticdb.java:9271)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:49)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:39)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.visitDeclared(SemanticdbTypeVisitor.java:13)
+	at com.sun.tools.javac.code.Type$ClassType.accept(Type.java:944)
+	at javax.lang.model.util.AbstractTypeVisitor6.visit(AbstractTypeVisitor6.java:105)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTypeVisitor.semanticdbType(SemanticdbTypeVisitor.java:27)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateType(SemanticdbSignatures.java:110)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateFieldSignature(SemanticdbSignatures.java:82)
+	at com.sourcegraph.semanticdb_javac.SemanticdbSignatures.generateSignature(SemanticdbSignatures.java:30)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.semanticdbSignature(SemanticdbVisitor.java:265)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolInformation(SemanticdbVisitor.java:96)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.emitSymbolOccurrence(SemanticdbVisitor.java:88)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:206)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitVariable(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:864)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:81)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:133)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:173)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.visitClass(SemanticdbVisitor.java:30)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:720)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sun.source.util.TreeScanner.scan(TreeScanner.java:91)
+	at com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:99)
+	at com.sun.source.util.TreeScanner.visitCompilationUnit(TreeScanner.java:120)
+	at com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:550)
+	at com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbVisitor.buildTextDocument(SemanticdbVisitor.java:68)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.onFinishedAnalyze(SemanticdbTaskListener.java:85)
+	at com.sourcegraph.semanticdb_javac.SemanticdbTaskListener.finished(SemanticdbTaskListener.java:64)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:681)
+	at com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:111)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1342)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1296)
+	at com.sun.tools.javac.main.JavaCompiler.compile2(JavaCompiler.java:901)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:860)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	at com.sun.tools.javac.main.Main.compile(Main.java:381)
+	at com.sun.tools.javac.main.Main.compile(Main.java:370)
+	at com.sun.tools.javac.main.Main.compile(Main.java:361)
+	at com.sun.tools.javac.Main.compile(Main.java:56)
+	at com.sun.tools.javac.Main.main(Main.java:42)
+Mar 21, 2023 9:07:36 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 79
+2023.03.21 21:07:36 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/utils/SqlStatement.java
+Mar 21, 2023 9:08:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.03.21 21:08:51 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/pojo/DmVTrContractMx.java
+2023.03.21 21:08:58 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/pojo/DmVTrContractMx.java
+2023.03.21 21:09:00 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/pojo/DmVTrContractMx.java
+2023.03.21 21:09:00 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/pojo/DmVTrContractMx.java
