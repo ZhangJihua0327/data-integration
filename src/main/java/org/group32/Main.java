@@ -47,14 +47,15 @@ public class Main {
 
         Properties kafkaProps = new Properties();
         kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "te2up");
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "t213213123123");
         kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
-
-        String topic = "test";
+        String topic = "zjh";
 
         FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
-        consumer.setStartFromGroupOffsets();
-        //consumer.setStartFromEarliest();
+    
+
         DataStreamSource<String> source = env.addSource(consumer);
         List<DataStream<String>> dataStreams = spiltByEventType(source);
         for (int i = 0; i < dataStreams.size(); i++) {
@@ -80,6 +81,7 @@ public class Main {
             String str = json.get("eventBody").toJSONString();
             T pojo = JSON.parseObject(str, tClass);
             System.out.println(pojo);
+            System.out.println();
             return pojo;
         };
         return subDataStream.map(mp);
