@@ -10017,3 +10017,1013 @@ import org.group32.utils.ClickhouseSinkFunction;
 /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
         MapFunction<String, T> mp = s -> {
                                     ^
+2023.03.21 17:17:56 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java
+2023.03.21 17:17:57 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:3: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSON;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:4: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSONObject;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:5: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.FilterFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:6: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.MapFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:7: error: package org.apache.flink.api.common.serialization does not exist
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:8: error: package org.apache.flink.streaming.api does not exist
+import org.apache.flink.streaming.api.TimeCharacteristic;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:9: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStream;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:10: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:11: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:12: error: package org.apache.flink.streaming.api.environment does not exist
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+                                                 ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:13: error: package org.apache.flink.streaming.connectors.kafka does not exist
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+                                                  ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:14: error: package org.apache.kafka.clients.consumer does not exist
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+                                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:15: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:16: error: package org.group32.utils does not exist
+import org.group32.utils.ClickhouseSinkFunction;
+                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                       ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                                                            ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                       ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                             ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                                                                        ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                   ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                                                                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:25: error: cannot find symbol
+        pojoMap.put("contract", DmVTrContractMx.class);
+                                ^
+  symbol:   class DmVTrContractMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:26: error: cannot find symbol
+        pojoMap.put("djk", DmVTrDjkMx.class);
+                           ^
+  symbol:   class DmVTrDjkMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:27: error: cannot find symbol
+        pojoMap.put("dsf", DmVTrDsfMx.class);
+                           ^
+  symbol:   class DmVTrDsfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:28: error: cannot find symbol
+        pojoMap.put("duebill", DmVTrDuebillMx.class);
+                               ^
+  symbol:   class DmVTrDuebillMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:29: error: cannot find symbol
+        pojoMap.put("etc", DmVTrEtcMx.class);
+                           ^
+  symbol:   class DmVTrEtcMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:30: error: cannot find symbol
+        pojoMap.put("grwy", DmVTrGrwyMx.class);
+                            ^
+  symbol:   class DmVTrGrwyMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:31: error: cannot find symbol
+        pojoMap.put("gzdf", DmVTrGzdfMx.class);
+                            ^
+  symbol:   class DmVTrGzdfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:32: error: cannot find symbol
+        pojoMap.put("huanb", DmVTrHuanbMx.class);
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:33: error: cannot find symbol
+        pojoMap.put("huanx", DmVTrHuanxMx.class);
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:34: error: cannot find symbol
+        pojoMap.put("sa", DmVTrSaMx.class);
+                          ^
+  symbol:   class DmVTrSaMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:35: error: cannot find symbol
+        pojoMap.put("sbyb", DmVTrSbybMx.class);
+                            ^
+  symbol:   class DmVTrSbybMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:36: error: cannot find symbol
+        pojoMap.put("sdrq", DmVTrSdrqMx.class);
+                            ^
+  symbol:   class DmVTrSdrqMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:37: error: cannot find symbol
+        pojoMap.put("sjyh", DmVTrSjyhMx.class);
+                            ^
+  symbol:   class DmVTrSjyhMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:38: error: cannot find symbol
+        pojoMap.put("shop", VTrShopMx.class);
+                            ^
+  symbol:   class VTrShopMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        ^
+  symbol:   class StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+                                         ^
+  symbol:   variable StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:46: error: cannot find symbol
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+                                        ^
+  symbol:   variable TimeCharacteristic
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:49: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:50: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:51: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:52: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "213213141512");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:53: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                  ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                                                        ^
+  symbol:   class SimpleStringSchema
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:59: error: cannot find symbol
+        DataStreamSource<String> source = env.addSource(consumer);
+        ^
+  symbol:   class DataStreamSource
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:60: error: cannot find symbol
+        List<DataStream<String>> dataStreams = spiltByEventType(source);
+             ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:62: error: cannot find symbol
+            Class<? extends POJO> tclass = pojoMap.get(eventTypes.get(i));
+                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+            ^
+  symbol:   class ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+                                          ^
+  symbol:   variable ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+            ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+                                                 ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:72: error: cannot find symbol
+        return eventTypes.stream().map(eventType -> dataSource.filter((FilterFunction<String>) s -> {
+                                                                       ^
+  symbol:   class FilterFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: cannot find symbol
+        MapFunction<String, T> mp = s -> {
+        ^
+  symbol:   class MapFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
+        MapFunction<String, T> mp = s -> {
+                                    ^
+2023.03.21 17:25:09 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java
+2023.03.21 17:25:10 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:3: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSON;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:4: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSONObject;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:5: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.FilterFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:6: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.MapFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:7: error: package org.apache.flink.api.common.serialization does not exist
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:8: error: package org.apache.flink.streaming.api does not exist
+import org.apache.flink.streaming.api.TimeCharacteristic;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:9: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStream;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:10: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:11: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:12: error: package org.apache.flink.streaming.api.environment does not exist
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+                                                 ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:13: error: package org.apache.flink.streaming.connectors.kafka does not exist
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+                                                  ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:14: error: package org.apache.kafka.clients.consumer does not exist
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+                                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:15: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:16: error: package org.group32.utils does not exist
+import org.group32.utils.ClickhouseSinkFunction;
+                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                       ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                                                            ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                       ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                             ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                                                                        ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                   ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                                                                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:25: error: cannot find symbol
+        pojoMap.put("contract", DmVTrContractMx.class);
+                                ^
+  symbol:   class DmVTrContractMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:26: error: cannot find symbol
+        pojoMap.put("djk", DmVTrDjkMx.class);
+                           ^
+  symbol:   class DmVTrDjkMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:27: error: cannot find symbol
+        pojoMap.put("dsf", DmVTrDsfMx.class);
+                           ^
+  symbol:   class DmVTrDsfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:28: error: cannot find symbol
+        pojoMap.put("duebill", DmVTrDuebillMx.class);
+                               ^
+  symbol:   class DmVTrDuebillMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:29: error: cannot find symbol
+        pojoMap.put("etc", DmVTrEtcMx.class);
+                           ^
+  symbol:   class DmVTrEtcMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:30: error: cannot find symbol
+        pojoMap.put("grwy", DmVTrGrwyMx.class);
+                            ^
+  symbol:   class DmVTrGrwyMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:31: error: cannot find symbol
+        pojoMap.put("gzdf", DmVTrGzdfMx.class);
+                            ^
+  symbol:   class DmVTrGzdfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:32: error: cannot find symbol
+        pojoMap.put("huanb", DmVTrHuanbMx.class);
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:33: error: cannot find symbol
+        pojoMap.put("huanx", DmVTrHuanxMx.class);
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:34: error: cannot find symbol
+        pojoMap.put("sa", DmVTrSaMx.class);
+                          ^
+  symbol:   class DmVTrSaMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:35: error: cannot find symbol
+        pojoMap.put("sbyb", DmVTrSbybMx.class);
+                            ^
+  symbol:   class DmVTrSbybMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:36: error: cannot find symbol
+        pojoMap.put("sdrq", DmVTrSdrqMx.class);
+                            ^
+  symbol:   class DmVTrSdrqMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:37: error: cannot find symbol
+        pojoMap.put("sjyh", DmVTrSjyhMx.class);
+                            ^
+  symbol:   class DmVTrSjyhMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:38: error: cannot find symbol
+        pojoMap.put("shop", VTrShopMx.class);
+                            ^
+  symbol:   class VTrShopMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        ^
+  symbol:   class StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+                                         ^
+  symbol:   variable StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:46: error: cannot find symbol
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+                                        ^
+  symbol:   variable TimeCharacteristic
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:49: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:50: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:51: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:52: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "te2up872131232");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:53: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                  ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                                                        ^
+  symbol:   class SimpleStringSchema
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:59: error: cannot find symbol
+        DataStreamSource<String> source = env.addSource(consumer);
+        ^
+  symbol:   class DataStreamSource
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:60: error: cannot find symbol
+        List<DataStream<String>> dataStreams = spiltByEventType(source);
+             ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:62: error: cannot find symbol
+            Class<? extends POJO> tclass = pojoMap.get(eventTypes.get(i));
+                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+            ^
+  symbol:   class ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+                                          ^
+  symbol:   variable ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+            ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+                                                 ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:72: error: cannot find symbol
+        return eventTypes.stream().map(eventType -> dataSource.filter((FilterFunction<String>) s -> {
+                                                                       ^
+  symbol:   class FilterFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: cannot find symbol
+        MapFunction<String, T> mp = s -> {
+        ^
+  symbol:   class MapFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
+        MapFunction<String, T> mp = s -> {
+                                    ^
+2023.03.21 17:25:12 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java
+2023.03.21 17:25:12 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:3: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSON;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:4: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSONObject;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:5: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.FilterFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:6: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.MapFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:7: error: package org.apache.flink.api.common.serialization does not exist
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:8: error: package org.apache.flink.streaming.api does not exist
+import org.apache.flink.streaming.api.TimeCharacteristic;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:9: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStream;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:10: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:11: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:12: error: package org.apache.flink.streaming.api.environment does not exist
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+                                                 ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:13: error: package org.apache.flink.streaming.connectors.kafka does not exist
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+                                                  ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:14: error: package org.apache.kafka.clients.consumer does not exist
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+                                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:15: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:16: error: package org.group32.utils does not exist
+import org.group32.utils.ClickhouseSinkFunction;
+                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                       ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                                                            ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                       ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                             ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                                                                        ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                   ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                                                                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:25: error: cannot find symbol
+        pojoMap.put("contract", DmVTrContractMx.class);
+                                ^
+  symbol:   class DmVTrContractMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:26: error: cannot find symbol
+        pojoMap.put("djk", DmVTrDjkMx.class);
+                           ^
+  symbol:   class DmVTrDjkMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:27: error: cannot find symbol
+        pojoMap.put("dsf", DmVTrDsfMx.class);
+                           ^
+  symbol:   class DmVTrDsfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:28: error: cannot find symbol
+        pojoMap.put("duebill", DmVTrDuebillMx.class);
+                               ^
+  symbol:   class DmVTrDuebillMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:29: error: cannot find symbol
+        pojoMap.put("etc", DmVTrEtcMx.class);
+                           ^
+  symbol:   class DmVTrEtcMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:30: error: cannot find symbol
+        pojoMap.put("grwy", DmVTrGrwyMx.class);
+                            ^
+  symbol:   class DmVTrGrwyMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:31: error: cannot find symbol
+        pojoMap.put("gzdf", DmVTrGzdfMx.class);
+                            ^
+  symbol:   class DmVTrGzdfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:32: error: cannot find symbol
+        pojoMap.put("huanb", DmVTrHuanbMx.class);
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:33: error: cannot find symbol
+        pojoMap.put("huanx", DmVTrHuanxMx.class);
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:34: error: cannot find symbol
+        pojoMap.put("sa", DmVTrSaMx.class);
+                          ^
+  symbol:   class DmVTrSaMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:35: error: cannot find symbol
+        pojoMap.put("sbyb", DmVTrSbybMx.class);
+                            ^
+  symbol:   class DmVTrSbybMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:36: error: cannot find symbol
+        pojoMap.put("sdrq", DmVTrSdrqMx.class);
+                            ^
+  symbol:   class DmVTrSdrqMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:37: error: cannot find symbol
+        pojoMap.put("sjyh", DmVTrSjyhMx.class);
+                            ^
+  symbol:   class DmVTrSjyhMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:38: error: cannot find symbol
+        pojoMap.put("shop", VTrShopMx.class);
+                            ^
+  symbol:   class VTrShopMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        ^
+  symbol:   class StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+                                         ^
+  symbol:   variable StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:46: error: cannot find symbol
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+                                        ^
+  symbol:   variable TimeCharacteristic
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:49: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:50: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:51: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:52: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "t213123");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:53: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                  ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                                                        ^
+  symbol:   class SimpleStringSchema
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:59: error: cannot find symbol
+        DataStreamSource<String> source = env.addSource(consumer);
+        ^
+  symbol:   class DataStreamSource
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:60: error: cannot find symbol
+        List<DataStream<String>> dataStreams = spiltByEventType(source);
+             ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:62: error: cannot find symbol
+            Class<? extends POJO> tclass = pojoMap.get(eventTypes.get(i));
+                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+            ^
+  symbol:   class ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+                                          ^
+  symbol:   variable ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+            ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+                                                 ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:72: error: cannot find symbol
+        return eventTypes.stream().map(eventType -> dataSource.filter((FilterFunction<String>) s -> {
+                                                                       ^
+  symbol:   class FilterFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: cannot find symbol
+        MapFunction<String, T> mp = s -> {
+        ^
+  symbol:   class MapFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
+        MapFunction<String, T> mp = s -> {
+                                    ^
+2023.03.21 17:25:31 WARN  no build target for: /home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java
+2023.03.21 17:25:31 WARN  Running javac-semanticdb failed for file:///home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java. Output:
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:3: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSON;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:4: error: package com.alibaba.fastjson does not exist
+import com.alibaba.fastjson.JSONObject;
+                           ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:5: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.FilterFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:6: error: package org.apache.flink.api.common.functions does not exist
+import org.apache.flink.api.common.functions.MapFunction;
+                                            ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:7: error: package org.apache.flink.api.common.serialization does not exist
+import org.apache.flink.api.common.serialization.SimpleStringSchema;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:8: error: package org.apache.flink.streaming.api does not exist
+import org.apache.flink.streaming.api.TimeCharacteristic;
+                                     ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:9: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStream;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:10: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:11: error: package org.apache.flink.streaming.api.datastream does not exist
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+                                                ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:12: error: package org.apache.flink.streaming.api.environment does not exist
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+                                                 ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:13: error: package org.apache.flink.streaming.connectors.kafka does not exist
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer;
+                                                  ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:14: error: package org.apache.kafka.clients.consumer does not exist
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+                                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:15: error: package org.group32.pojo does not exist
+import org.group32.pojo.*;
+^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:16: error: package org.group32.utils does not exist
+import org.group32.utils.ClickhouseSinkFunction;
+                        ^
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                       ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                                                            ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:70: error: cannot find symbol
+    public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
+                       ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                             ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                                                                        ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:78: error: cannot find symbol
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+                                   ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:22: error: cannot find symbol
+    static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();
+                                                                                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:25: error: cannot find symbol
+        pojoMap.put("contract", DmVTrContractMx.class);
+                                ^
+  symbol:   class DmVTrContractMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:26: error: cannot find symbol
+        pojoMap.put("djk", DmVTrDjkMx.class);
+                           ^
+  symbol:   class DmVTrDjkMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:27: error: cannot find symbol
+        pojoMap.put("dsf", DmVTrDsfMx.class);
+                           ^
+  symbol:   class DmVTrDsfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:28: error: cannot find symbol
+        pojoMap.put("duebill", DmVTrDuebillMx.class);
+                               ^
+  symbol:   class DmVTrDuebillMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:29: error: cannot find symbol
+        pojoMap.put("etc", DmVTrEtcMx.class);
+                           ^
+  symbol:   class DmVTrEtcMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:30: error: cannot find symbol
+        pojoMap.put("grwy", DmVTrGrwyMx.class);
+                            ^
+  symbol:   class DmVTrGrwyMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:31: error: cannot find symbol
+        pojoMap.put("gzdf", DmVTrGzdfMx.class);
+                            ^
+  symbol:   class DmVTrGzdfMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:32: error: cannot find symbol
+        pojoMap.put("huanb", DmVTrHuanbMx.class);
+                             ^
+  symbol:   class DmVTrHuanbMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:33: error: cannot find symbol
+        pojoMap.put("huanx", DmVTrHuanxMx.class);
+                             ^
+  symbol:   class DmVTrHuanxMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:34: error: cannot find symbol
+        pojoMap.put("sa", DmVTrSaMx.class);
+                          ^
+  symbol:   class DmVTrSaMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:35: error: cannot find symbol
+        pojoMap.put("sbyb", DmVTrSbybMx.class);
+                            ^
+  symbol:   class DmVTrSbybMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:36: error: cannot find symbol
+        pojoMap.put("sdrq", DmVTrSdrqMx.class);
+                            ^
+  symbol:   class DmVTrSdrqMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:37: error: cannot find symbol
+        pojoMap.put("sjyh", DmVTrSjyhMx.class);
+                            ^
+  symbol:   class DmVTrSjyhMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:38: error: cannot find symbol
+        pojoMap.put("shop", VTrShopMx.class);
+                            ^
+  symbol:   class VTrShopMx
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        ^
+  symbol:   class StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:44: error: cannot find symbol
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+                                         ^
+  symbol:   variable StreamExecutionEnvironment
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:46: error: cannot find symbol
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+                                        ^
+  symbol:   variable TimeCharacteristic
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:49: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:50: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:51: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:52: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "t21312333");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:53: error: cannot find symbol
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+                       ^
+  symbol:   variable ConsumerConfig
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                  ^
+  symbol:   class FlinkKafkaConsumer
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:56: error: cannot find symbol
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+                                                                                        ^
+  symbol:   class SimpleStringSchema
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:59: error: cannot find symbol
+        DataStreamSource<String> source = env.addSource(consumer);
+        ^
+  symbol:   class DataStreamSource
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:60: error: cannot find symbol
+        List<DataStream<String>> dataStreams = spiltByEventType(source);
+             ^
+  symbol:   class DataStream
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:62: error: cannot find symbol
+            Class<? extends POJO> tclass = pojoMap.get(eventTypes.get(i));
+                            ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+            ^
+  symbol:   class ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:63: error: cannot find symbol
+            ClickhouseSinkFunction util = ClickhouseSinkFunction.makeUtil(tclass);
+                                          ^
+  symbol:   variable ClickhouseSinkFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+            ^
+  symbol:   class SingleOutputStreamOperator
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:64: error: cannot find symbol
+            SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
+                                                 ^
+  symbol:   class POJO
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:72: error: cannot find symbol
+        return eventTypes.stream().map(eventType -> dataSource.filter((FilterFunction<String>) s -> {
+                                                                       ^
+  symbol:   class FilterFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: cannot find symbol
+        MapFunction<String, T> mp = s -> {
+        ^
+  symbol:   class MapFunction
+  location: class Main
+/home/ubuntu/kafka-sink-clickhouse/src/main/java/org/group32/Main.java:79: error: lambda expression not expected here
+        MapFunction<String, T> mp = s -> {
+                                    ^
+Mar 21, 2023 5:29:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
