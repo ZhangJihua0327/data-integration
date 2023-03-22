@@ -16,12 +16,12 @@ public class EasyConsumer {
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "test_gro233");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "test_gro23233");
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-        consumer.subscribe(Arrays.asList("zjh"));
+        consumer.subscribe(Arrays.asList("test"));
 
         // 会从最新数据开始消费
         while (true) {
