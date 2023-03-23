@@ -49,7 +49,7 @@ public class Main {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.enableCheckpointing(5000);
-        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+        // env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
         Properties kafkaProps = new Properties();
         kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -57,7 +57,7 @@ public class Main {
                 "org.apache.kafka.common.serialization.StringDeserializer");
         kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "2221341");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "ababab");
         kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         String topic = "test";
 
@@ -77,7 +77,6 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {

@@ -4,7 +4,7 @@ import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 import org.group32.pojo.*;
 import ru.yandex.clickhouse.ClickHouseConnection;
-import ru.yandex.clickhouse.ClickHouseConnectionImpl;
+import ru.yandex.clickhouse.ClickHouseDataSource;
 import ru.yandex.clickhouse.settings.ClickHouseProperties;
 
 import java.lang.reflect.Field;
@@ -24,9 +24,8 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
             ClickHouseProperties properties = new ClickHouseProperties();
             properties.setUser("");
             properties.setPassword("");
-            properties.setSessionId("default-session-id");
 
-            conn = new ClickHouseConnectionImpl(url, properties);
+            conn = new ClickHouseDataSource(url, properties).getConnection();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -95,14 +94,5 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
             return new ClickhouseSinkFunction<VTrShopMx>();
         }
         return null;
-    }
-
-    public static void main(String[] args) throws Exception {
-        DmVTrHuanbMx huanbMx = new DmVTrHuanbMx();
-        huanbMx.setAcctNo("12");
-        ClickhouseSinkFunction<DmVTrHuanbMx> util = makeUtil(huanbMx.getClass());
-        util.open(null);
-        util.invoke(huanbMx, null);
-        util.close();
     }
 }
