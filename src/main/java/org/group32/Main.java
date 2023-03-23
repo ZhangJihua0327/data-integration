@@ -57,7 +57,7 @@ public class Main {
                 "org.apache.kafka.common.serialization.StringDeserializer");
         kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "222131231111241");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "2221341");
         kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         String topic = "test";
 
