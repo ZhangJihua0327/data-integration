@@ -17,16 +17,19 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
     }
 
     @Override
-    public void open(Configuration parameters) throws Exception {
-        super.open(parameters);
-        String url = "jdbc:clickhouse://localhost:8123/dm";
-        ClickHouseProperties properties = new ClickHouseProperties();
-        properties.setUser("");
-        properties.setPassword("");
-        properties.setSessionId("default-session-id");
+    public void open(Configuration parameters) {
+        try {
+            super.open(parameters);
+            String url = "jdbc:clickhouse://localhost:8123/dm";
+            ClickHouseProperties properties = new ClickHouseProperties();
+            properties.setUser("");
+            properties.setPassword("");
+            properties.setSessionId("default-session-id");
 
-        conn = new ClickHouseConnectionImpl(url, properties);
-
+            conn = new ClickHouseConnectionImpl(url, properties);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -37,28 +40,31 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
 
     @Override
     public void invoke(T value, Context context) throws Exception {
-        super.invoke(value, context);
-        PreparedStatement stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
-        Field[] fields = value.getClass().getDeclaredFields();
-        int index = 1;
-        for (Field field : fields) {
-            field.setAccessible(true);
-            if (field.getType() == String.class) {
-                stmt.setString(index, (String) field.get(value));
-            } else if (field.getType() == double.class) {
-                stmt.setDouble(index, (double) field.get(value));
-            } else if (field.getType() == int.class) {
-                stmt.setInt(index, (int) field.get(value));
-            } else if(field.getType() == long.class){
-                stmt.setLong(index, (long) field.get(value));
-            }else throw new RuntimeException("no such type value");
-            index++;
+        try {
+            PreparedStatement stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
+            Field[] fields = value.getClass().getDeclaredFields();
+            int index = 1;
+            for (Field field : fields) {
+                field.setAccessible(true);
+                if (field.getType() == String.class) {
+                    stmt.setString(index, (String) field.get(value));
+                } else if (field.getType() == double.class) {
+                    stmt.setDouble(index, (double) field.get(value));
+                } else if (field.getType() == int.class) {
+                    stmt.setInt(index, (int) field.get(value));
+                } else if (field.getType() == long.class) {
+                    stmt.setLong(index, (long) field.get(value));
+                } else throw new RuntimeException("no such type value");
+                index++;
+            }
+            System.out.println(stmt);
+            stmt.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        System.out.println(stmt);
-        stmt.execute();
     }
 
-    public static ClickhouseSinkFunction makeUtil( Class<? extends POJO> tclass) {
+    public static ClickhouseSinkFunction makeUtil(Class<? extends POJO> tclass) {
         if (tclass == DmVTrContractMx.class) {
             return new ClickhouseSinkFunction<DmVTrContractMx>();
         } else if (tclass == DmVTrDjkMx.class) {
@@ -87,10 +93,11 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
             return new ClickhouseSinkFunction<DmVTrSjyhMx>();
         } else if (tclass == VTrShopMx.class) {
             return new ClickhouseSinkFunction<VTrShopMx>();
-        } return null;
+        }
+        return null;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         DmVTrHuanbMx huanbMx = new DmVTrHuanbMx();
         huanbMx.setAcctNo("12");
         ClickhouseSinkFunction<DmVTrHuanbMx> util = makeUtil(huanbMx.getClass());

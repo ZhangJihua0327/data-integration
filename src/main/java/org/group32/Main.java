@@ -15,6 +15,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.group32.pojo.*;
 import org.group32.utils.ClickhouseSinkFunction;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -40,20 +41,28 @@ public class Main {
 
     static final List<String> eventTypes = new ArrayList<String>(pojoMap.keySet());
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) {
+        SimpleDateFormat sdf = new SimpleDateFormat();
+        sdf.applyPattern("yyyy-MM-dd HH:mm:ss a");
+        Date date = new Date();
+        System.out.println("现在时间：" + sdf.format(date));
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.enableCheckpointing(5000);
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
         Properties kafkaProps = new Properties();
         kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "22213123124111241");
-        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
+        kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
+                "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
+                "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "222131231111241");
+        kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         String topic = "test";
 
-        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
+        FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(),
+                kafkaProps);
 
         DataStreamSource<String> source = env.addSource(consumer);
         List<DataStream<String>> dataStreams = spiltByEventType(source);
@@ -63,7 +72,12 @@ public class Main {
             SingleOutputStreamOperator<? extends POJO> operator = createFlinkMapOperator(dataStreams.get(i), tclass);
             operator.addSink(util);
         }
-        env.execute();
+        try {
+            env.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static List<DataStream<String>> spiltByEventType(DataStream<String> dataSource) {
@@ -74,7 +88,8 @@ public class Main {
         })).collect(Collectors.toList());
     }
 
-    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(DataStream<String> subDataStream, final Class<T> tClass) {
+    public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(
+            DataStream<String> subDataStream, final Class<T> tClass) {
         MapFunction<String, T> mp = s -> {
             HashMap<String, JSONObject> json = JSON.parseObject(s, HashMap.class);
             String str = json.get("eventBody").toJSONString();
