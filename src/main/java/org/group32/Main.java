@@ -49,12 +49,11 @@ public class Main {
         kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         kafkaProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "2209322");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "22213123124111241");
         kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
         String topic = "test";
 
         FlinkKafkaConsumer<String> consumer = new FlinkKafkaConsumer<String>(topic, new SimpleStringSchema(), kafkaProps);
-    
 
         DataStreamSource<String> source = env.addSource(consumer);
         List<DataStream<String>> dataStreams = spiltByEventType(source);
