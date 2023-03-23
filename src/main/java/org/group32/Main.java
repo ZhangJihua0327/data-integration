@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
-import org.apache.flink.streaming.api.TimeCharacteristic;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -49,7 +48,6 @@ public class Main {
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.enableCheckpointing(5000);
-        // env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
 
         Properties kafkaProps = new Properties();
         kafkaProps.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -57,7 +55,7 @@ public class Main {
                 "org.apache.kafka.common.serialization.StringDeserializer");
         kafkaProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
-        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "ababab");
+        kafkaProps.put(ConsumerConfig.GROUP_ID_CONFIG, "aba23141b");
         kafkaProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         String topic = "test";
 
@@ -88,13 +86,11 @@ public class Main {
     }
 
     public static <T extends POJO> SingleOutputStreamOperator<T> createFlinkMapOperator(
-            DataStream<String> subDataStream, final Class<T> tClass) {
+        DataStream<String> subDataStream, final Class<T> tClass) {
         MapFunction<String, T> mp = s -> {
             HashMap<String, JSONObject> json = JSON.parseObject(s, HashMap.class);
             String str = json.get("eventBody").toJSONString();
             T pojo = JSON.parseObject(str, tClass);
-            System.out.println(pojo);
-            System.out.println();
             return pojo;
         };
         return subDataStream.map(mp);

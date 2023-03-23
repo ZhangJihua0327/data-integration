@@ -56,8 +56,8 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
                 } else throw new RuntimeException("no such type value");
                 index++;
             }
-            System.out.println(stmt);
-            stmt.execute();
+            //System.out.println(stmt);
+            //stmt.execute();
         } catch (Exception e) {
             e.printStackTrace();
         }
