@@ -10,11 +10,8 @@ import ru.yandex.clickhouse.settings.ClickHouseProperties;
 import java.lang.reflect.Field;
 import java.sql.PreparedStatement;
 
-public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> {
+public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
     private ClickHouseConnection conn = null;
-
-    private ClickhouseSinkFunction() {
-    }
 
     @Override
     public void open(Configuration parameters) {
@@ -24,6 +21,7 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
             ClickHouseProperties properties = new ClickHouseProperties();
             properties.setUser("");
             properties.setPassword("");
+            properties.setSessionId("default-session-id");
 
             conn = new ClickHouseDataSource(url, properties).getConnection();
         } catch (Exception e) {
@@ -38,7 +36,7 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
     }
 
     @Override
-    public void invoke(T value, Context context) throws Exception {
+    public void invoke(POJO value, Context context) throws Exception {
         try {
             PreparedStatement stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
             Field[] fields = value.getClass().getDeclaredFields();
@@ -56,43 +54,9 @@ public class ClickhouseSinkFunction<T extends POJO> extends RichSinkFunction<T> 
                 } else throw new RuntimeException("no such type value");
                 index++;
             }
-            //System.out.println(stmt);
-            //stmt.execute();
+            stmt.execute();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static ClickhouseSinkFunction makeUtil(Class<? extends POJO> tclass) {
-        if (tclass == DmVTrContractMx.class) {
-            return new ClickhouseSinkFunction<DmVTrContractMx>();
-        } else if (tclass == DmVTrDjkMx.class) {
-            return new ClickhouseSinkFunction<DmVTrDjkMx>();
-        } else if (tclass == DmVTrDsfMx.class) {
-            return new ClickhouseSinkFunction<DmVTrDsfMx>();
-        } else if (tclass == DmVTrDuebillMx.class) {
-            return new ClickhouseSinkFunction<DmVTrDuebillMx>();
-        } else if (tclass == DmVTrEtcMx.class) {
-            return new ClickhouseSinkFunction<DmVTrEtcMx>();
-        } else if (tclass == DmVTrGrwyMx.class) {
-            return new ClickhouseSinkFunction<DmVTrGrwyMx>();
-        } else if (tclass == DmVTrGzdfMx.class) {
-            return new ClickhouseSinkFunction<DmVTrGzdfMx>();
-        } else if (tclass == DmVTrHuanbMx.class) {
-            return new ClickhouseSinkFunction<DmVTrHuanbMx>();
-        } else if (tclass == DmVTrHuanxMx.class) {
-            return new ClickhouseSinkFunction<DmVTrHuanxMx>();
-        } else if (tclass == DmVTrSaMx.class) {
-            return new ClickhouseSinkFunction<DmVTrSaMx>();
-        } else if (tclass == DmVTrSbybMx.class) {
-            return new ClickhouseSinkFunction<DmVTrSbybMx>();
-        } else if (tclass == DmVTrSdrqMx.class) {
-            return new ClickhouseSinkFunction<DmVTrSdrqMx>();
-        } else if (tclass == DmVTrSjyhMx.class) {
-            return new ClickhouseSinkFunction<DmVTrSjyhMx>();
-        } else if (tclass == VTrShopMx.class) {
-            return new ClickhouseSinkFunction<VTrShopMx>();
-        }
-        return null;
     }
 }
