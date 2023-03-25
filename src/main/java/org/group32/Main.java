@@ -38,8 +38,6 @@ public class Main {
         pojoMap.put("shop", VTrShopMx.class);
     }
 
-    static final List<String> eventTypes = new ArrayList<String>(pojoMap.keySet());
-
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.enableCheckpointing(5000);
@@ -61,12 +59,10 @@ public class Main {
 
     public static SingleOutputStreamOperator<POJO> createFlinkOperator(DataStream<String> stream) {
         MapFunction<String, POJO> mpFunc = s -> {
-            System.out.println(s);
-            HashMap<String, String> json = JSON.parseObject(s, HashMap.class);
-            String eventType = json.get("eventType");
-            String eventBody = json.get("eventBody");
-            Class<? extends POJO> clazz = pojoMap.get(eventType);
-            POJO pojo = JSON.parseObject(eventBody, clazz);
+            HashMap<String, JSONObject> json = JSON.parseObject(s, HashMap.class);
+            Class<? extends POJO> clazz = pojoMap.get(json.get("eventType"));
+            POJO pojo = JSON.parseObject(json.get("eventBody").toString(), clazz);
+            System.out.println(pojo.toString());
             return pojo;
         };
         return stream.map(mpFunc);

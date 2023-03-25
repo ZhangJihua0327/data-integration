@@ -21,7 +21,6 @@ public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
             ClickHouseProperties properties = new ClickHouseProperties();
             properties.setUser("");
             properties.setPassword("");
-            properties.setSessionId("default-session-id");
 
             conn = new ClickHouseDataSource(url, properties).getConnection();
         } catch (Exception e) {
