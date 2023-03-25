@@ -40,7 +40,7 @@ public class Main {
         env.enableCheckpointing(5000);
         Properties kafkaProps = new Properties();
         kafkaProps.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
-        kafkaProps.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "11111");
+        kafkaProps.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "03251708");
         kafkaProps.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         String topic = "test";
 
