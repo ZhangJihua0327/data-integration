@@ -2,7 +2,6 @@ package org.group32;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import org.apache.flink.api.common.functions.FilterFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStream;
@@ -14,9 +13,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.group32.pojo.*;
 import org.group32.utils.ClickhouseSinkFunction;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     static Map<String, Class<? extends POJO>> pojoMap = new HashMap<String, Class<? extends POJO>>();

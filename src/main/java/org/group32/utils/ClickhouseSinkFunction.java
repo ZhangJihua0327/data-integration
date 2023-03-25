@@ -19,8 +19,8 @@ public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
             super.open(parameters);
             String url = "jdbc:clickhouse://localhost:8123/dm";
             ClickHouseProperties properties = new ClickHouseProperties();
-            properties.setUser("");
-            properties.setPassword("");
+            properties.setUser("Sjjc");
+            properties.setPassword("Sjjc123456");
 
             conn = new ClickHouseDataSource(url, properties).getConnection();
         } catch (Exception e) {
