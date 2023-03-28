@@ -1,5 +1,5 @@
 CREATE DATABASE dm;
-CREATE TABLE dm.dm_hlw_shop_info (
+CREATE TABLE IF NOT EXISTS dm.dm_hlw_shop_info (
     shop_code String,
     shop_name String,
     shop_reg_date String,
@@ -40,7 +40,7 @@ ENGINE = MergeTree
 ORDER BY shop_code;
 
 
-CREATE TABLE dm.dm_v_as_djk_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_djk_info (
     acct_no String,
     card_no String,
     cust_name String,
@@ -85,7 +85,7 @@ CREATE TABLE dm.dm_v_as_djk_info (
 ENGINE = MergeTree
 ORDER BY acct_no;
 
-CREATE TABLE dm.dm_v_as_djkfq_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_djkfq_info (
     acct_no String,
     card_no String,
     cust_name String,
@@ -111,7 +111,7 @@ CREATE TABLE dm.dm_v_as_djkfq_info (
 ENGINE = MergeTree
 ORDER BY acct_no;
 
-CREATE TABLE dm.dm_v_as_etc_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_etc_info (
     belong_org String,
     etc_acct String,
     etc_acct_type String,
@@ -143,7 +143,7 @@ CREATE TABLE dm.dm_v_as_etc_info (
 ENGINE = MergeTree
 ORDER BY belong_org;
 
-CREATE TABLE dm.dm_v_as_grwy_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_grwy_info (
     belong_org String,
     ebank_cust_no String,
     cust_name String,
@@ -159,7 +159,7 @@ CREATE TABLE dm.dm_v_as_grwy_info (
 ENGINE = MergeTree
 ORDER BY belong_org;
 
-CREATE TABLE dm.dm_v_as_sbdz_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_sbdz_info (
     uid String,
     cust_name String,
     sign_date String,
@@ -172,7 +172,7 @@ CREATE TABLE dm.dm_v_as_sbdz_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_as_sbyb_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_sbyb_info (
     uid String,
     cust_name String,
     acct_no String,
@@ -184,7 +184,7 @@ CREATE TABLE dm.dm_v_as_sbyb_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_as_sdm_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_sdm_info (
     type String,
     exam_org String,
     household_no String,
@@ -203,7 +203,7 @@ CREATE TABLE dm.dm_v_as_sdm_info (
 ENGINE = MergeTree
 ORDER BY type;
 
-CREATE TABLE dm.dm_v_as_sjhmzf_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_sjhmzf_info (
     belong_org String,
     cust_name String,
     uid String,
@@ -217,7 +217,7 @@ CREATE TABLE dm.dm_v_as_sjhmzf_info (
 ENGINE = MergeTree
 ORDER BY belong_org;
 
-CREATE TABLE dm.dm_v_as_sjyh_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_sjyh_info (
     belong_org String,
     ebank_cust_no String,
     cust_name String,
@@ -243,7 +243,7 @@ CREATE TABLE dm.dm_v_as_sjyh_info (
 ENGINE = MergeTree
 ORDER BY belong_org;
 
-CREATE TABLE dm.dm_v_as_wxyh_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_wxyh_info (
     wechat_no String,
     acct_no String,
     acct_type String,
@@ -263,7 +263,7 @@ CREATE TABLE dm.dm_v_as_wxyh_info (
 ENGINE = MergeTree
 ORDER BY wechat_no;
 
-CREATE TABLE dm.dm_v_as_ybdzpz_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_ybdzpz_info (
     uid String,
     ebank_cust_no String,
     sign_date String,
@@ -276,7 +276,7 @@ CREATE TABLE dm.dm_v_as_ybdzpz_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_as_ydzf_info (
+CREATE TABLE IF NOT EXISTS dm.dm_v_as_ydzf_info (
     type String,
     type_name String,
     belong_org String,
@@ -298,7 +298,7 @@ CREATE TABLE dm.dm_v_as_ydzf_info (
 ENGINE = MergeTree
 ORDER BY type;
 
-CREATE TABLE dm.dm_v_tr_contract_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_contract_mx (
     uid String,
     contract_no String,
     apply_no String,
@@ -369,7 +369,7 @@ CREATE TABLE dm.dm_v_tr_contract_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_djk_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_djk_mx (
     uid String,
     card_no String,
     tran_type String,
@@ -390,7 +390,7 @@ CREATE TABLE dm.dm_v_tr_djk_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_dsf_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_dsf_mx (
     tran_date String,
     tran_log_no String,
     tran_code String,
@@ -415,7 +415,7 @@ CREATE TABLE dm.dm_v_tr_dsf_mx (
 ENGINE = MergeTree
 ORDER BY tran_date;
 
-CREATE TABLE dm.dm_v_tr_duebill_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_duebill_mx (
     uid String,
     acct_no String,
     receipt_no String,
@@ -470,7 +470,7 @@ CREATE TABLE dm.dm_v_tr_duebill_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_etc_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_etc_mx (
     uid String,
     etc_acct String,
     card_no String,
@@ -488,7 +488,7 @@ CREATE TABLE dm.dm_v_tr_etc_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_grwy_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_grwy_mx (
     uid String,
     mch_channel String,
     login_type String,
@@ -510,7 +510,7 @@ CREATE TABLE dm.dm_v_tr_grwy_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_gzdf_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_gzdf_mx (
     belong_org String,
     ent_acct String,
     ent_name String,
@@ -529,7 +529,7 @@ CREATE TABLE dm.dm_v_tr_gzdf_mx (
 ENGINE = MergeTree
 ORDER BY belong_org;
 
-CREATE TABLE dm.dm_v_tr_huanb_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_huanb_mx (
     tran_flag String,
     uid String,
     cust_name String,
@@ -553,7 +553,7 @@ CREATE TABLE dm.dm_v_tr_huanb_mx (
 ENGINE = MergeTree
 ORDER BY tran_flag;
 
-CREATE TABLE dm.dm_v_tr_huanx_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_huanx_mx (
     tran_flag String,
     uid String,
     cust_name String,
@@ -577,7 +577,7 @@ CREATE TABLE dm.dm_v_tr_huanx_mx (
 ENGINE = MergeTree
 ORDER BY tran_flag;
 
-CREATE TABLE dm.dm_v_tr_sa_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_sa_mx (
     uid String,
     card_no String,
     cust_name String,
@@ -614,7 +614,7 @@ ENGINE = MergeTree
 ORDER BY uid
 PARTITION BY tran_date;
 
-CREATE TABLE dm.dm_v_tr_sbyb_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_sbyb_mx (
     uid String,
     cust_name String,
     tran_date String,
@@ -629,7 +629,7 @@ CREATE TABLE dm.dm_v_tr_sbyb_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.dm_v_tr_sdrq_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_sdrq_mx (
     hosehld_no String,
     acct_no String,
     cust_name String,
@@ -649,7 +649,7 @@ CREATE TABLE dm.dm_v_tr_sdrq_mx (
 ENGINE = MergeTree
 ORDER BY hosehld_no;
 
-CREATE TABLE dm.dm_v_tr_sjyh_mx (
+CREATE TABLE IF NOT EXISTS dm.dm_v_tr_sjyh_mx (
     uid String,
     mch_channel String,
     login_type String,
@@ -671,7 +671,7 @@ CREATE TABLE dm.dm_v_tr_sjyh_mx (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.pri_cust_asset_acct_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_asset_acct_info (
     cust_no String,
     cust_name String,
     uid String,
@@ -709,7 +709,7 @@ CREATE TABLE dm.pri_cust_asset_acct_info (
 ENGINE = MergeTree
 ORDER BY cust_no;
 
-CREATE TABLE dm.pri_cust_asset_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_asset_info (
     cust_no String,
     cust_name String,
     uid String,
@@ -739,7 +739,7 @@ CREATE TABLE dm.pri_cust_asset_info (
 ENGINE = MergeTree
 ORDER BY cust_no;
 
-CREATE TABLE dm.pri_cust_base_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_base_info (
     uid String,
     cert_type String,
     cust_no String,
@@ -796,7 +796,7 @@ CREATE TABLE dm.pri_cust_base_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.pri_cust_contact_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_contact_info (
     uid String,
     contact_phone String,
     contact_address String
@@ -804,7 +804,7 @@ CREATE TABLE dm.pri_cust_contact_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.pri_cust_liab_acct_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_liab_acct_info (
     belong_org String,
     exam_org String,
     cust_no String,
@@ -887,7 +887,7 @@ CREATE TABLE dm.pri_cust_liab_acct_info (
 ENGINE = MergeTree
 ORDER BY (loan_cust_no, acct_no);
 
-CREATE TABLE dm.pri_cust_liab_info (
+CREATE TABLE IF NOT EXISTS dm.pri_cust_liab_info (
     uid String,
     all_bal Nullable(decimal(18,2)),
     bad_bal Nullable(decimal(18,2)),
@@ -899,7 +899,7 @@ CREATE TABLE dm.pri_cust_liab_info (
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.v_tr_shop_mx (
+CREATE TABLE IF NOT EXISTS dm.v_tr_shop_mx (
     tran_channel String,
     order_code String,
     shop_code String,
@@ -918,14 +918,14 @@ CREATE TABLE dm.v_tr_shop_mx (
 ENGINE = MergeTree
 ORDER BY tran_channel;
 
-CREATE TABLE dm.pri_credit_info (
+CREATE TABLE IF NOT EXISTS dm.pri_credit_info (
     uid String,
     credit_level String
 )
 ENGINE = MergeTree
 ORDER BY uid;
 
-CREATE TABLE dm.pri_star_info (
+CREATE TABLE IF NOT EXISTS dm.pri_star_info (
     uid String,
     star_level String
 )
