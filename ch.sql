@@ -1,4 +1,4 @@
-CREATE DATABASE dm;
+CREATE DATABASE IF NOT EXISTS dm;
 CREATE TABLE IF NOT EXISTS dm.dm_hlw_shop_info (
     shop_code String,
     shop_name String,
