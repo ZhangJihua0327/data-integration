@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 
 public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
     private ClickHouseConnection conn = null;
+    private int saCount = 0;
+    PreparedStatement stmt;;
 
     @Override
     public void open(Configuration parameters) {
@@ -31,13 +33,42 @@ public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
     @Override
     public void close() throws Exception {
         super.close();
-        if (conn != null) conn.close();
+        if (conn != null)
+            conn.close();
     }
 
     @Override
     public void invoke(POJO value, Context context) throws Exception {
-        try {
-            PreparedStatement stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
+        if (value instanceof DmVTrSaMx) {
+            if (saCount >= 1000) {
+                stmt.executeBatch();
+                saCount = 0;
+                
+            }
+            if(saCount++==0){
+                stmt = conn.prepareStatement(SqlStatement.getSQl(DmVTrSaMx.class));
+            }
+            int index = 1;
+            Field[] fields = value.getClass().getDeclaredFields();
+            for (Field field : fields) {
+                field.setAccessible(true);
+                if (field.getType() == String.class) {
+                    stmt.setString(index, (String) field.get(value));
+                } else if (field.getType() == double.class) {
+                    stmt.setDouble(index, (double) field.get(value));
+                } else if (field.getType() == int.class) {
+                    stmt.setInt(index, (int) field.get(value));
+                } else if (field.getType() == long.class) {
+                    stmt.setLong(index, (long) field.get(value));
+                } else
+                    throw new RuntimeException("no such type value");
+                index++;
+            }
+            stmt.addBatch();
+        } else {
+            stmt.executeBatch();
+            saCount = 0;
+            stmt = conn.prepareStatement(SqlStatement.getSQl(value.getClass()));
             Field[] fields = value.getClass().getDeclaredFields();
             int index = 1;
             for (Field field : fields) {
@@ -50,12 +81,11 @@ public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
                     stmt.setInt(index, (int) field.get(value));
                 } else if (field.getType() == long.class) {
                     stmt.setLong(index, (long) field.get(value));
-                } else throw new RuntimeException("no such type value");
+                } else
+                    throw new RuntimeException("no such type value");
                 index++;
             }
             stmt.execute();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
