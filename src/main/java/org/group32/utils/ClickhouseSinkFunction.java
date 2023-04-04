@@ -42,8 +42,8 @@ public class ClickhouseSinkFunction extends RichSinkFunction<POJO> {
         if (value instanceof DmVTrSaMx) {
             if (saCount >= 1000) {
                 stmt.executeBatch();
+                stmt.clearBatch();
                 saCount = 0;
-                
             }
             if(saCount++==0){
                 stmt = conn.prepareStatement(SqlStatement.getSQl(DmVTrSaMx.class));
